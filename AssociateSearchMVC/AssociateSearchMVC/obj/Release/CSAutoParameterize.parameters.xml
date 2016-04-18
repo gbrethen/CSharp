@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=100.200.2.72;Initial Catalog=AssociateSearch;Integrated Security=false;Persist Security Info=True;User ID=inet;Password=inet" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Greg\\documents\\visual\ studio\ 2012\\Projects\\AssociateSearchMVC\\AssociateSearchMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

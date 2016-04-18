@@ -1,0 +1,5 @@
+C:\Users\gbrethen\documents\visual studio 2010\Projects\AuthenticateUser\AuthenticateUser\bin\Debug\AuthenticateUser.dll
+C:\Users\gbrethen\documents\visual studio 2010\Projects\AuthenticateUser\AuthenticateUser\bin\Debug\AuthenticateUser.pdb
+C:\Users\gbrethen\documents\visual studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gbrethen\documents\visual studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Debug\AuthenticateUser.dll
+C:\Users\gbrethen\documents\visual studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Debug\AuthenticateUser.pdb

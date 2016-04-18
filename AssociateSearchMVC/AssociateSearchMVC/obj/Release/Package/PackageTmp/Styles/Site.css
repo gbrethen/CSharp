@@ -1,0 +1,190 @@
+﻿body {
+}
+
+#outer
+{
+	width:675px;
+	margin:0 auto;
+	text-align:center;
+	padding:0;
+}
+
+#header
+{
+	font-family:Microsoft Sans Serif;
+	font-size:22pt;
+	font-style:normal;
+	font-weight:bold;
+	color:#004080;
+	text-align:center;
+	padding:0;
+	margin-bottom:5px;
+}
+
+#msg
+{
+	font-family:Microsoft Sans Serif;
+	font-size:10pt;
+	font-style:normal;
+	font-weight:bold;
+	color:#ff0000;
+	text-align:center;
+	padding:0;
+	margin-bottom: 5px;
+}
+
+#main
+{
+	padding:0;
+	border:0;
+	border-collapse:collapse;
+	background-color:#f5f5f5;
+}
+
+
+.left
+{
+	width:175px;
+	background-color:#98bdee;
+	text-align:right;
+	padding-right:5px;
+	padding-top:5px;
+    padding-bottom:5px;
+	margin:0;
+	border:0;
+}
+
+.left p
+{
+	font-family:Arial;
+	font-size:10pt;
+	font-weight:bold;
+	color:#004080;
+	padding:0;
+	margin:0;
+	
+}
+
+.right
+{
+	text-align:left;
+	background-color:#f5f5f5;
+	width:495px;
+	padding-left:5px;
+	padding-top:5px;
+    padding-bottom:5px;
+	margin:0;
+	border:0;
+}
+
+.right p
+{
+	font-family:Arial;
+	font-size:10pt;
+	font-weight:bold;
+	padding:0;
+	margin:0;
+}
+
+.right input
+{
+	margin-top:0;
+	margin-bottom:0;
+	padding:0;
+}
+
+.right select
+{
+	margin-top:0;
+	margin-bottom:0;
+	padding:0;
+}
+
+p.buttons
+{
+	text-align:center;
+}
+
+.btns
+{
+    width:100px;
+    height:22px;
+    margin:4px;
+    padding:4px;
+    vertical-align:middle;
+}
+
+div#disclaimer
+{
+	background-color:#98bdee;
+	text-align:center;
+	padding:15px;
+	margin:0;
+	border:0;
+}
+
+div#disclaimer p
+{
+	font-family:Arial;
+	font-size:0.75em;
+	color:#004080;
+	padding:0;
+	margin:0;	
+}
+
+#tblHeader
+{
+    width: 100%;
+}
+
+
+#tblHeader th
+{
+    background-color:#98bdee;
+	font-family:Arial;
+	font-size:10pt;
+	font-weight:bold;
+	color:#004080;
+	padding:2px;
+	text-align:center;
+}
+
+#tblHeader tr
+{
+	font-family:Arial;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000;
+	padding:2px;
+	text-align:left;
+}
+
+.alt
+{
+    background-color:#98bdee;
+}
+
+div#divDataContainer{
+    text-align:left;
+	margin:0 auto;
+	overflow: auto;
+	max-height: 400px;
+	width:100%;
+	padding:0;
+}
+
+#tblResults{
+    width: 100%;
+}
+
+#tblResults tr
+{
+	font-family:Arial;
+	font-size:10pt;
+	font-weight:normal;
+	color:#000;
+	padding:2px;
+	text-align:left;
+}
+
+

@@ -1,0 +1,9 @@
+C:\Users\gbrethen\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\bin\Release\AuthenticateUser.dll
+C:\Users\gbrethen\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\bin\Release\AuthenticateUser.pdb
+C:\Users\gbrethen\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Release\AuthenticateUser.dll
+C:\Users\gbrethen\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Release\AuthenticateUser.pdb
+C:\Users\gbrethen\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Release\AuthenticateUser.csprojResolveAssemblyReference.cache
+C:\Users\Greg\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\bin\Release\AuthenticateUser.dll
+C:\Users\Greg\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\bin\Release\AuthenticateUser.pdb
+C:\Users\Greg\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Release\AuthenticateUser.dll
+C:\Users\Greg\Documents\Visual Studio 2010\Projects\AuthenticateUser\AuthenticateUser\obj\Release\AuthenticateUser.pdb

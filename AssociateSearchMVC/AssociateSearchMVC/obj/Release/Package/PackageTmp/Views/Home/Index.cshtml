@@ -1,0 +1,212 @@
+﻿@model IEnumerable<AssociateSearchMVC.Models.Associate>
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Styles/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+
+<script type="text/javascript">
+    <!--
+        function SetDisclaimer(caller) {
+            var _sDisclaimer = "All Associate Staff Search information is maintained in PeopleSoft. If the information is not accurate, please log on to the <em>Ascension Health Portal</em> to update your information using the Associate Self Service tool. Changes entered in the Associate Self Service tool will appear the next day in Associate Staff Search.";
+            var _sHospital = "";
+            var _sDept = "";
+            var _sPhone = "";
+
+            //var is_present = window.location.href.indexOf('?loc=');
+            
+            var _loc = ""; //1=Baptist, 2=Hickman, 3=Metro Center, 4=MTMC, 5=NSC, 6=Saint Thomas, 7=STPSNet
+            
+            //if loc found in query string then set appropriate disclaimer.  Else look at value of ddlCampus
+            //if (is_present != -1) {
+            //    _loc = getValue("loc");
+            //}else{
+                _loc = caller.toString();
+           // }
+
+            switch (_loc) {
+                case "1":
+                    //Baptist Hospital
+                    _sHospital = "Baptist Hospital";
+                    _sDept = "Associate Services";
+                    _sPhone = "284-6337 | 284-4759 | 284-7570 | 284-5996";
+                    break;
+                case "2":
+                    //Hickman
+                    _sHospital = "Hickman Community Hospital";
+                    _sDept = "Associate Services";
+                    _sPhone = "396-4104";
+                    break;
+                case "3":
+                    //Metro Center
+                    _sHospital = "Metro Center";
+                    _sDept = "Associate Services";
+                    _sPhone = "222-6615";
+                    break;
+                case "4":
+                    //MTMC
+                    _sHospital = "Middle Tennessee Medical Center";
+                    _sDept = "Associate Services";
+                    _sPhone = "222-6615";
+                    break;
+                case "5":
+                    //NSC
+                    _sHospital = "NSC";
+                    _sDept = "Associate Services";
+                    _sPhone = "222-6615";
+                    break;
+                case "6":
+                    //Saint Thomas
+                    _sHospital = "Saint Thomas Hospital";
+                    _sDept = "Associate Services";
+                    _sPhone = "222-6615";
+                    break;
+                case "7":
+                    //STPSNet
+                    _sHospital = "STPSNet";
+                    _sDept = "Associate Services";
+                    _sPhone = "222-6615";
+                    break;
+                case "0":
+                    //STPSNet
+                    _sHospital = "Select";
+                    _sDept = " a campus";
+                    _sPhone = "";
+                    break;
+                
+            }
+
+            //var sHtml = "<p style='text-align:left; font-style:normal; font-weight:bold;'>" + _sDisclaimer + "</p><p style='text-align:center; font-style:normal; font-weight:normal; margin-top:5px;'>" + _sHospital + " - " + _sDept + "&nbsp;&#40;<em>" + _sPhone + "</em>&#41;</p>";
+            var sHtml = "<p style='text-align:left; font-style:normal; font-weight:bold;'>" + _sDisclaimer + "</p>";
+            document.getElementById("disclaimer").innerHTML = sHtml;
+        }
+        
+        function cascadingdropdown() {
+            var strCampus = $("#CampusName").val();
+            //alert("Campus selected = " + strCampus);
+            var urlLoadDepartments = '@Url.Action("LoadDepartments")';
+            var select = $('#departmentName');
+            $.ajax({
+                type: "POST",
+                url: urlLoadDepartments,
+                data: { sCampus: strCampus },
+                success: function(returndata){
+                    if (returndata.ok) {
+                        //alert('employee data is on javascript,  populating combo ');
+                        //empty the combo
+                        select.empty();
+                        //fill again
+                        $.each(returndata.data, function (index, itemData) {
+                            select.append($('<option></option>').val(itemData).html(itemData));
+                        });
+                        select.show('slow');
+                    }
+                    else {
+                        alert(' error : ' + returndata.message);
+                    }
+                }
+	        });
+        }
+
+    function resetform () {
+        document.location.href = '@Url.Action("Index")';
+    };
+        
+    </script>
+<body onload="SetDisclaimer(1)">
+    <div id="outer">
+        <div id="header">
+            Associate Staff Search
+        </div>
+        <div id="msg">@if(ViewBag.Count > 0){ @ViewBag.Msg }</div>
+        <table id="main" runat="server">
+            @using (Html.BeginForm("Index","Home",FormMethod.Get))
+            {    
+            <tr>
+                    <td class="left"><p>Campus:</p></td>
+                    <td class="right">
+                        <p>
+                             @Html.DropDownList("CampusName", ViewBag.CampusName as SelectList, "-- All --", new { onchange = "cascadingdropdown();" })
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left"><p>Department:</p></td>
+                    <td class="right">
+                        <p>
+                            @Html.DropDownList("departmentName", "-- Select --")
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left"><p>Last Name:</p></td>
+                    <td class="right"><p>@Html.TextBox("LastName")</p></td>
+                </tr>
+                <tr>
+                    <td class="left"><p>First Name:</p></td>
+                    <td class="right"><p>@Html.TextBox("FirstName")</p></td>
+                </tr>
+                <tr>
+                    <td class="left"><p>Middle Name:</p></td>
+                    <td class="right"><p>@Html.TextBox("MiddleName")</p></td>
+                </tr>
+                <tr>
+                    <td class="left"><p>&nbsp;</p></td>
+                    <td class="right"><p class="buttons" style="padding-bottom:5px;"><input type="submit" value="Filter" class="btns" />&nbsp;<input type="button" value="Clear" class="btns" onclick="resetform()" /></p></td>
+                </tr>
+            }
+                <tr>
+                    <td colspan="2" style="margin:0; padding:0; border:0;"><div id="disclaimer"></div></td>
+                </tr>
+        </table>
+    @if (ViewBag.Count > 0)
+    {
+        <table id="tblHeader">
+            <tr>
+                <th style="width:5%;">#</th>
+                <th style="width:35%;">
+                    @Html.DisplayNameFor(model => model.Name)/@Html.DisplayNameFor(model => model.Title)/@Html.DisplayNameFor(model => model.Company)
+                </th>
+                <th style="width:30%;">
+                    @Html.DisplayNameFor(model => model.Phone)/@Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th style="width:30%;">
+                    Dept/@Html.DisplayNameFor(model => model.Location)/Supervisor
+                </th>
+            </tr>
+        </table>
+        <div id="divDataContainer">
+            <table id="tblResuls" style="width:100%;">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width:5%; background-color:#989898; color:#fff; text-align:center;">@Html.DisplayFor(modelItem => item.RowNum)</td>
+                    <td style="width:35%;">
+                        <b>@Html.DisplayFor(modelItem => item.Name)</b><br />
+                        <span style="font-size:8pt;">@Html.DisplayFor(modelItem => item.Title)</span><br />
+                        <span style="font-size:8pt;">@Html.DisplayFor(modelItem => item.Company)</span> 
+                    </td>
+                    <td style="width:30%;">
+                        <span style="font-size:8pt;">@Html.DisplayFor(modelItem => item.Phone)</span><br />
+                        <span style="font-size:8pt;"><a href="mailto:@Html.DisplayFor(modelItem => item.Email)">@Html.DisplayFor(modelItem => item.Email)</a></span><br />
+                        <span>&nbsp;</span>
+                    </td>
+                    <td style="width:30%;">
+                        <span style="font-size:8pt;">@Html.DisplayFor(modelItem => item.Department)</span><br />
+                        <span style="font-size:8pt;">@Html.DisplayFor(modelItem => item.Location)</span><br />
+                        <span style="font-size:8pt;">@Html.DisplayFor(modelItem => item.SupervisorName)</span>
+                    </td>
+                </tr>
+            }
+            </table>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('tr:odd').addClass('alt');
+            });
+
+        </script>
+        
+    }
+    </div>
+</body>
